@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+	<title>CHIC'ON - Inovative hardware</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="css/images/favicon.ico" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />	
+	<script src="js/jquery-1.10.2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/chicon-1.0.js" type="text/javascript"></script>
+	<script src="js/register.html-1.js" type="text/javascript"></script>
+	<script  src="js/jquery-ui-1.10.4.custom.js" type="text/javascript"></script>
+	<script src="js/cartDetail.html-1.js" type="text/javascript"></script>
+	<script src="js/contactForm.html-1.js" type="text/javascript"></script>
+	<script src=""></script>
+<SCRIPT>
+$(function() {
+	initUI();
+	initCommonUI();
+});
+</SCRIPT>
+</head>
+
+
+<body>
+	<!-- Begin Wrapper -->
+	<div id="wrapper">
+		<!-- Begin Shell -->
+		<div class="shell">
+			<!-- Begin Top Navigation -->
+			<span id="top-nav"><span class="welcome" id="welcomemsg">Welcome on Chic'on!</span><a id="cartLink" href="#" title="My Cart">My Cart</a><span>|</span><a onclick="javascript:showLoginForm();" id="loginlink" title="Login">Login</a><div id='loginform' class="inputform">
+			<form id="loginform" action="" method="POST">
+				<input type="text" id="username" value="login"/>
+				<input onfocus="javascript:this.select();" type="password" id="password" value="password"/>
+				<div class="submitbtn" onclick="javascript:login();"></div>
+			</form>
+			</div></span>
+			
+			<!-- End Top Navigation -->
+			<div class="cl">&nbsp;</div>
+			<!-- Begin Header -->
+			<div id="header">
+				<h1 id="logo"><a class="notext" href="#" title="CHIC'on">Chic'on Store</a></h1>
+				<!-- Begin Search -->
+				<!-- End Search -->
+				<div class="cl">&nbsp;</div>
+			</div>
+			<!-- End Header -->
+			<!-- Begin Navigation -->
+			<div id="navigation">
+				<ul>
+					<ul>
+					<li class="first"><a href="home.html" title="Home"><span>Home</span></a></li>
+					<li><a href="serviceShop.html" title="Models"><span>Applications</span></a></li>
+					<li id="registerTab"><a href="" title="Register" class="active" ><span>Register</span></a></li>			
+				</ul>		
+				</ul>
+				<div class="cl">&nbsp;</div>
+			</div>
+			<!-- End Navigation -->
+			<div class="cl">&nbsp;</div>
+			<!-- Begin Main -->
+			<div id="main">
+				<!-- Begin Content -->
+				<div id="content">
+				<div id="detailedCartDialog"></div>
+				<div id="disclaimerDialog"></div>
+				<div id="aboutDialog"></div>
+				<div id="contactDialog"></div>
+					<div class="top"></div>
+					<!-- Begin Inner -->
+					<div class="inner">
+					<div class="wspin" id="rspin"></div>
+					<div id="answer">
+				<h2>Thank you ! Your account has been created:</h2>
+				<ul id="registerList">
+					<li>&nbsp;Log in clicking on the link (top right corner)</li>
+					<li>&nbsp;You will receive an e-mail shortly, <b>please confirm your registration</b></li>
+					<li>&nbsp;Request your serial number and add your device on your profile page</li>
+					<li>&nbsp;Hosting is not free, please support us by donating to our paypal acccount</li>
+				</ul>
+				<DIV class="paypal">
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="DPTJH5KFW9SNJ">
+					<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal ֠The safer, easier way to pay online.">
+					<img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+					</form>
+				</div>
+				</div>
+						<div class="registerForm">
+							<h2>Register an account</h2>
+							<!-- Begin Row -->
+							<div class="row" id="formContent">
+								<FORM class="entryForm" id="addUserForm">
+									<h4>First Name</h4><input type="text" name="firstName"/>
+									<h4>Family Name</h4><input type="text" name="familyName"/>
+									<h4>E-mail (will be used for login)</h4><input type="mail" name="email"/>
+									<h4>Password (minimum 4 characters)</h4><input type="password" name="userPassword"/>
+									<h4>Confirm Password</h4><input type="password" name="userPasswordConfirmation"/>
+									<div class="asm"><input type="text" name="asm"/></div>	
+									<input type="submit" value="Register">
+								</FORM>
+							</div>
+						</div>
+					</div>
+					<!-- End Inner -->
+				</div>
+				<!-- End Content -->
+			</div>
+			<!-- End Main -->
+			<!-- Begin Footer -->
+			<div id="footer">
+				<p class="bottom-menu"><a href="#" id="aboutLink" title="About Us">About Us</a><span>|</span><a href="#" id="contactLink" title="Contact Us">Contact Us</a><span>|</span><a href="#" id="disclaimerLink" title="Disclaimer">Terms of Use</a></p>
+				<div id="bottom-logo"><a href="" class="notext" title="CHIC'on">CHIC'on</a></div>
+				<div class="cl">&nbsp;</div>
+			</div>
+			<!-- End Footer -->
+		</div>
+		<!-- End Shell -->
+	</div>
+	<!-- End Wrapper -->
+</body>
+</html>

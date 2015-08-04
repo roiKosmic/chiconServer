@@ -1,0 +1,14 @@
+Time : 17:03:44
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'userlogin' in 'field list'
+Raw SQL : INSERT INTO known_hdw (`id`, `serial`,`insertionDate`,`userlogin`) VALUES ('',:nSerial,NOW(),:user)
+
+Time : 17:03:28
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'userlogin' in 'field list'
+Raw SQL : INSERT INTO known_hdw (`id`, `serial`,`insertionDate`,`userlogin`) VALUES ('',:nSerial,NOW(),:user)
+
+Time : 17:03:16
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'userlogin' in 'field list'
+Raw SQL : INSERT INTO known_hdw (`id`, `serial`,`insertionDate`,`userlogin`) VALUES ('',:nSerial,NOW(),:user)
+
+Time : 16:48:54
+SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty

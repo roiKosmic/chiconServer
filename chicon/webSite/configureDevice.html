@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+	<title>CHIC'ON - Inovative hardware</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="css/images/favicon.ico" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />	
+	<link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.4.custom.css" type="text/css" media="all" />	
+	<script src="js/jquery-1.10.2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/chicon-1.0.js" type="text/javascript"></script>
+	<script src="js/configureDevice.htm-1.js" type="text/javascript"></script>
+	<script  src="js/jquery-ui-1.10.4.custom.js" type="text/javascript"></script>
+	<script src="js/serviceDetails.htm-1.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jRating.jquery.js"></script>
+	<script src="js/cartDetail.html-1.js" type="text/javascript"></script>
+	<script src="js/contactForm.html-1.js" type="text/javascript"></script>
+<SCRIPT>
+$(function() {
+	isLoggedIn();
+	initUI();
+	initCommonUI();
+});
+
+$(document).ready(function(){
+    bindClick();
+});
+</SCRIPT>
+</head>
+<body>
+	<!-- Begin Wrapper -->
+	<div id="wrapper">
+		<!-- Begin Shell -->
+		<div class="shell">
+			<!-- Begin Top Navigation -->
+			<span id="top-nav"><span class="welcome" id="welcomemsg">Welcome on Chic'on!</span><a id="cartLink" href="#" title="My Cart">My Cart</a><span>|</span><a onclick="javascript:showLoginForm();" id="loginlink" title="Login">Login</a><div id='loginform' class="inputform">
+			<form id="loginform" action="" method="POST">
+				<input type="text" id="username" value="login"/>
+				<input onfocus="javascript:this.select();" type="password" id="password" value="password"/>
+				<div class="submitbtn" onclick="javascript:login();"></div>
+			</form>
+			</div></span>
+			
+			<!-- End Top Navigation -->
+			<div class="cl">&nbsp;</div>
+			<!-- Begin Header -->
+			<div id="header">
+				<h1 id="logo"><a class="notext" href="#" title="CHIC'on">Chic'on Store</a></h1>
+				
+				<div class="cl">&nbsp;</div>
+			</div>
+			<!-- End Header -->
+			<!-- Begin Navigation -->
+			<div id="navigation">
+				<ul>
+					<li class="first"><a href="home.html" title="Home"><span>Home</span></a></li>
+					<li><a href="serviceShop.html"  title="Models"><span>Applications</span></a></li>			
+				</ul>
+				<div class="cl">&nbsp;</div>
+			</div>
+			<!-- End Navigation -->
+			<div class="cl">&nbsp;</div>
+			<!-- Begin Main -->
+			<div id="main">
+				<!-- Begin Content -->
+				<div id="content">
+				<div id="detailedCartDialog"></div>
+				<div id="disclaimerDialog"></div>
+				<div id="aboutDialog"></div>
+				<div id="contactDialog"></div>
+					<div id="ledDialog" title="Asign lights">
+						<ul id="ledList">
+								<li style="list-style:none;">
+									<div class="ledList" >
+									<img class="drag" ref="232" src="css/images/light_tricolor.png" height="50" width="50"/>
+									<div class="ledDescription">Indicate traffic delay of the fucking serviceIndicate traffic delay Indicate traffic delay Indicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delay</div>
+									<span class="ui-icon ui-icon-grip-dotted-horizontal"></span>
+									</div>
+								</li>
+								<li style="list-style:none;" >
+									<div class="ledList">
+									<img class="drag" ref="232" src="css/images/light_tricolor.png" height="50" width="50"/>
+									<div class="ledDescription">Indicate traffic delay Indicate traffic delay Indicate traffic delay Indicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delayIndicate traffic delay</div>
+									<span class="ui-icon ui-icon-grip-dotted-horizontal"></span>
+									</div>
+								</li>
+						</ul>
+					</div>
+					
+					<div id="configDialog" title="Configure your Service">
+						<form>
+							Hello !
+						</form>
+					</div>
+					
+					<div id="serviceDetailsDialog" title="Service details">
+						my Service details
+					</div>
+				<div class="top"></div>
+					<!-- Begin Inner -->
+					<div class="innerConfigDevice">
+					<h3>> Configure your device</h3>
+						<div class="box1">
+							<div class="boxHeader" >Details</div>
+							<ul id="deviceDetails">
+								<li><div class ="title">Type :</Div>dfddfs</li>
+								<li><div class ="title">Serial :</Div>dfddfs</li>
+								<li><div class ="title">Location:</Div>dfddfs</li>
+							</ul>
+						</div>
+						<div class="boxv">
+							<div class="boxHeader">My Services
+							<a class="scrollDown" id="scroll-down"></a>
+							<a class="scrollUp" id="scroll-up"></a>
+							</div>
+							<div id="scroll">
+							<ul id="availableServiceList" class="serviceList">
+							
+							</ul>
+							</div>
+						</div>
+						<div class="boxm">
+							<div class="boxHeader">Schema</div>
+							<div>&nbsp;</div>
+							<div class="dragToLed"><span style="position:absolute;z-index:0;">Drag light here</span></div>
+							<div class="dragToLed"><span style="position:absolute;z-index:0;">Drag light here</span></div>
+						</div>
+						<div class="boxv2">
+							<div class="boxHeader">Associated Services</div>
+								<ul id="associatedServiceList" class="serviceList">
+									<li>
+										<div class="serviceList">
+											<img src="css/images/TrafficLogoV2.png" height="50" width="50"/>
+											<div class="serviceName">Traffic</div>
+										</div>
+									</li>
+								</ul>
+						</div>
+					</div>		
+				</div>
+				<!-- End Content -->
+			</div>
+			<!-- End Main -->
+		
+			<!-- Begin Footer -->
+			<div id="footer">
+				<p class="bottom-menu"><a href="#" id="aboutLink" title="About Us">About Us</a><span>|</span><a href="#" id="contactLink" title="Contact Us">Contact Us</a><span>|</span><a href="#" id="disclaimerLink" title="Disclaimer">Terms of Use</a></p>
+				<div id="bottom-logo"><a href="" class="notext" title="CHIC'on">CHIC'on</a></div>
+				<div class="cl">&nbsp;</div>
+			</div>
+			<!-- End Footer -->
+		</div>
+		<!-- End Shell -->
+	</div>
+	<!-- End Wrapper -->
+</body>
+</html>
