@@ -116,6 +116,21 @@ CREATE TABLE IF NOT EXISTS `led_service_list` (
   KEY `id_led_service` (`id_led_service`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `led_service_list`
+--
+
+INSERT INTO `led_service_list` (`id`, `id_led_service`, `id_service`, `led_type`, `common_name`, `description`) VALUES 
+(1, 1, 1, 4, 'Weather Status', ''),
+(2, 1, 2, 2, 'tricolor_led', ''), 
+(3, 2, 2, 1, 'Binary led', ''), 
+(4, 3, 2, 4, 'fadding led', ''),
+(5, 1, 3, 2, 'Traffic jam', ''), 
+(6, 1, 4, 2, 'Reminder LED', 'Led turning on when something must be done'), 
+(7, 1, 5, 2, 'Air Quality Led', 'Gives air quality'), 
+(9, 1, 6, 8, 'Blinking Led', 'Blink when tweet is matching pattern');
+
+
 -- --------------------------------------------------------
 
 --
