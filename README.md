@@ -3,7 +3,7 @@
 This repository contains code for the Chicon application cloud and the chicon Web Server. It can be used by any Chicon compatible smartlamp. To build your chicon Smart Lamp, you can visit the chiconCube repository and wiki.
 
 ## 1- Chicon Server pre-requisite
-You must have a web server (apache for example) running with php 5.x enabled.
+You must have a web server (apache for example) running with php 5.5 enabled.
 You must have a SMTP server configured in your php.ini to have mail() php function enabled
 You must have a MySQL server running
 
