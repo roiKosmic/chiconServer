@@ -1,5 +1,5 @@
 <?php
-	require "../addon/ChiconTwitterGateway.class.php";
+	require "../addOn/ChiconTwitterGateway.class.php";
 	
 	function execute($args){
 		parse_str($args,$arr);
