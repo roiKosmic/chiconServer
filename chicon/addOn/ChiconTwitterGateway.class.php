@@ -5,7 +5,7 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 class ChiconTwitterGateway{
 	const CONSUMER_KEY = "Nm6mrKIUJSTA2t8ufe003M2Kd";
 	const CONSUMER_SECRET = "M5U3Fwz25dNIKqf7M7W5MW5K50QWxUAAOs6Fyco4yqcIBTupuD";
-	const CALL_BACK_URL = "http://127.0.0.1/chicon/addOn/o_auth.php";
+	const CALL_BACK_URL = "http://www.chicon.fr/chicon/addOn/o_auth.php";
 	private $twtConnection;
 
 	
