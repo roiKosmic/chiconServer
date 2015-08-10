@@ -75,6 +75,7 @@
 			$fromHour = $arr['fromHour'];
 			$toHour = $arr['toHour'];
 			$lastTwtId = $arr['lastTwtId'];
+			$pattern = $arr['regexp'];
 			$new_args = "access_token=".$accessToken."&access_token_secret=".$accessTokenSecret."&fromHour=".$fromHour."&toHour=".$toHour."&regexp=".$pattern."&ack=1&lastTwtId=".$lastTwtId;
 			return $new_args;
 		}
