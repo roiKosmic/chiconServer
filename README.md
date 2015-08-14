@@ -31,3 +31,7 @@ Go to your website, click on the application page, you should see 6 applications
 
 Your are know able to create a user on the register page.
 
+## 4 - Licenses 
+The add-on forlder use the twiteroauth library made by Abraham Williams https://github.com/abraham/twitteroauth
+
+
