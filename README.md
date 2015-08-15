@@ -10,7 +10,9 @@ This repository contains code for the Chicon application cloud and the chicon We
 ## 2 - Chicon Server installation
 ### Web Server configuration
 Copy the Chicon folder to your www folder
-Create a symlink index.html to chicon/webSite/home.html
+Create a symlink index.html to chicon/webSite/home.html or copy index.php to your root folder.
+Copy h.php to your route folder.
+h.php is equivalent to /chicon/webServices/hdwWS.php. It is the web service managing the Chic'on device communication with the Chic'on application cloud. As first device is based on arduino Uno +wifi shield, I needed to use less memoray as possible. Making a GET request to /h.php consumes less memory than same request to /chicon/webServices/hdwWS.php !
 
 ### MySQL configuration
 Create a database named chicon_db
