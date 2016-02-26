@@ -1,5 +1,8 @@
 # chiconServer
 
+V2 beta version is under development - you may use the stable release or the master branch
+The chicon.fr is web site is currently running the stable release.
+
 This repository contains code for the Chicon application cloud and the chicon Web Server. It can be used by any Chicon compatible smartlamp. To build your chicon Smart Lamp, you can visit the chiconCube repository and wiki.
 
 ## 1- Chicon Server pre-requisite
