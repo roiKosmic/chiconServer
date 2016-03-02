@@ -1,6 +1,27 @@
-PC :                                                   10->149
-copieurs :                                          150->160
-imprimantes :                                    161->190
-scan + brinbrin :                                191->199 (si plus de 9 scan, il faut descendre sur la plage imprimante)
-DHCP (nouvelle plage)                     200->230
-réseau :                                             231->254
+<?php
+
+function execute($args){
+	parse_str($args,$arr);
+	if(isset($arr['values'])){
+	
+		$myArray = array( 0 => array( "id" => 1, "value" => array_map("intval",$arr['values'])));
+		
+		
+	
+	}else{
+		$myArray = array( 0 => array( "id" => 1, "value" => array(0)));
+	
+	}
+	
+	return $myArray;
+}
+
+function ledSelected($led,$args=null){
+	parse_str($args,$arr);
+	if(isset($arr["values"])){
+		$arr["values"]	= [0];
+	}
+	return http_build_query($arr);
+}
+
+?>
