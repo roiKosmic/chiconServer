@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `service_list` (
   `common_name` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `icon` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `description` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `exec_script` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `exec_script` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `config_script` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `exec_freq` int(11) NOT NULL,
   PRIMARY KEY (`srvGlobalId`)
