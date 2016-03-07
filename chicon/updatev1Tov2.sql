@@ -1,3 +1,5 @@
+ALTER TABLE `chicon_db`.`service_list` CHANGE `exec_script` `exec_script` VARCHAR(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL; 
+
 INSERT INTO `chicon_db`.`service_list` (`srvGlobalId`, `common_name`, `icon`, `description`, `exec_script`, `config_script`, `exec_freq`) VALUES (NULL, 'IFTTT RGB', 'css/images/ifttt_rgb_icon.png', 'IFTT RGB service. Light a RGB led group when an IFTTT event occured', 'srvScript/exec_ifttt_rgb.php', 'srvScript/config_ifttt_rgb.php', '1000');
 INSERT INTO `chicon_db`.`led_service_list` (`id`, `id_led_service`, `id_service`, `led_type`, `common_name`, `description`) VALUES (NULL, '1', '6', '4', 'RGB Iftt', 'Light when a ifttt event occurs');
 
