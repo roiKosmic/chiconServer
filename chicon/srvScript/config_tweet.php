@@ -1,6 +1,6 @@
 
 <?php
-require_once "../addon/ChiconTwitterGateway.class.php";
+require_once "../addOn/ChiconTwitterGateway.class.php";
 
 function configure($args){
 	if(isset($args['tweet'])){
