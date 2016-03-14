@@ -152,7 +152,7 @@ class ChiconUser{
 				$this->userName = $username;
 				return true;
 			}else{
-				echo "bad password";
+				return false;
 			
 			}
 			return false;
