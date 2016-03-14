@@ -6,6 +6,7 @@ class ChiconHardware{
 
 	private $myDB;
 	private $serialNumber =null;
+	private $hdwType=2;
 	private $magicNumber;
 	private $SQL_REGISTER = "SELECT * FROM users_hdw_list WHERE magicNumber_hdw = :magicNumber AND registered = 1";
 	private $SQL_HDW_EXIST = "SELECT * FROM users_hdw_list WHERE serial_hdw = :sHdw"; 
@@ -33,8 +34,9 @@ class ChiconHardware{
 	private $SQL_MAP_LED = "INSERT INTO `users_hdw_service_led_mapping`(`id`, `serial_hdw`, `localId_service`, `id_led_hdw`, `id_led_service`) VALUES ('',:sHdw,:localId,:idLedHdw,:idLedSrv)";
 	private $SQL_UPDATE_MN = "UPDATE `users_hdw_list` SET `magicNumber_hdw`=:mn, registered=1  WHERE serial_hdw=:sHdw";
 	private $SQL_HDW_ENROLLED = "SELECT * FROM users_hdw_list WHERE serial_hdw=:sHdw AND registered=1 ";
-	private $SQL_HDW_ASSIGN_TO_USER = "INSERT INTO `users_hdw_list` (`id`,`id_user`,`id_hdw`,`serial_hdw`,`firmware_hdw`,`magicNumber_hdw`,`registered`) VALUES ('',:userId,2,:sHdw,'0.1a','',1)";
+	private $SQL_HDW_ASSIGN_TO_USER = "INSERT INTO `users_hdw_list` (`id`,`id_user`,`id_hdw`,`serial_hdw`,`firmware_hdw`,`magicNumber_hdw`,`registered`) VALUES ('',:userId,:idHdw,:sHdw,'0.1a','',1)";
 	private $SQL_HDW_DEL_FROM_USER = "DELETE FROM `users_hdw_list` WHERE serial_hdw = :sHdw AND id_user = :userId";
+	private $SQL_HDW_GET_TYPE = "SELECT * FROM `hdw_list` WHERE model = :hdwModel";
 	
 	
 	public function __construct($database,$mN){
@@ -52,11 +54,20 @@ class ChiconHardware{
 	public static function toAssign($db,$serialNumber){
 		$instance = new self($db,null);
 		$instance->serialNumber = $serialNumber;
+		$type = substr($serialNumber,0,3);
+		$result = $instance->myDB->row($instance->SQL_HDW_GET_TYPE, array('hdwModel'=>$type));
+		if($result !=null){
+			$instance->hdwType = $result['id'];
+		}
+		
 		return $instance;
 	}
 	public function exist(){
 		$result = $this->myDB->row($this->SQL_HDW_EXIST, array('sHdw'=>$this->serialNumber));
 		if($result !=null){
+			if($this->magicNumber==null){
+				$this->magicNumber = $result['magicNumber_hdw'];
+			}
 			return true;
 		}
 		return false;
@@ -91,7 +102,7 @@ class ChiconHardware{
 		
 			return false;
 		}
-		$result =  $this->myDB->query($this->SQL_HDW_ASSIGN_TO_USER, array('userId'=>$uid,'sHdw'=>$this->serialNumber));
+		$result =  $this->myDB->query($this->SQL_HDW_ASSIGN_TO_USER, array('userId'=>$uid,'idHdw'=>$this->hdwType,'sHdw'=>$this->serialNumber));
 		if($result !=0){
 			$this->generateMagicNumber();
 			return true;
