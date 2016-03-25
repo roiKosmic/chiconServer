@@ -8,6 +8,7 @@
 		private $db;
 		private $iftttKey = null;
 		private $relatedHdw = null;
+		private $URL = "http://www.chicon.fr/chicon/addOn/IFTTT.php";
 		
 		public function __construct($key=null,$mn=null){
 			$this->db = new DB();
@@ -49,11 +50,18 @@
 		}
 	
 		function getIftttConfigDescr($valueDesc=null){
-			$str = "{\"iftttKey\":\"".$this->iftttKey."\",\"mn\":\"".$this->relatedHdw."\",\"values\":[".$valueDesc."]}";
+			$str = "On your ITTT account, create a maker channel with following settings\n";
+			$str .= "URL:".$this->URL."\n";
+			$str .="Method: POST\n";
+			$str .="Content Type: application/json\n";
+			$str .= "Body:\n";
+			$str .= "{\"iftttKey\":\"".$this->iftttKey."\",\"mn\":\"".$this->relatedHdw."\",\"values\":[".$valueDesc."]}";
 			return $str;
 
 		}
-		
+		function getIftttConfigURL(){
+			return "URL :$this->URL";
+		}
 		function getIftttConfigString(){
 			return "iftttKey=".$this->iftttKey;
 		
